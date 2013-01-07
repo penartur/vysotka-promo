@@ -1,4 +1,13 @@
-﻿extends layout
+﻿
+mixin navBlock(image, text, url)
+	.span4
+		.thumbnail
+			img(src=image)
+			.caption
+				block
+				p: a.btn(href=url) Подробнее
+
+extends layout
 
 append navLinks
 	+navLinks('/')
@@ -24,23 +33,17 @@ append body
 				**Звоните:** +7-todo-todo
 
 	.row
-		.span3
-			h2 О квартире
+		+navBlock('todo-flat.jpg', '/flat')
 			p todo текст о квартире
-			p todo thumbnail квартиры
-			p: a.btn(href='/flat') Подробнее
-		.span3
-			h2 О доме
-			p todo текст о доме
-			p todo thumbnail дома
-			p: a.btn(href='/building') Подробнее
-		.span3
-			h2 Фотографии
+		+navBlock('todo-building.jpg', '/building')
+			p todo текст о здании
+		+navBlock('todo-photos.jpg', '/photos')
 			p todo текст о фотографиях
-			p todo thumbnail ещё чего-нибудь
-			p: a.btn(href='/photo') Подробнее
-		.span3
-			h2 О договоре
+	br
+	.row
+		+navBlock('todo-contract.jpg', '/contract')
 			p todo текст о договоре
-			p todo thumbnail ???
-			p: a.btn(href='/contract') Подробнее
+		+navBlock('todo-faq.jpg', '/faq')
+			p todo текст о часто задаваемых вопросах
+		+navBlock('todo-links.jpg', '/links')
+			p todo текст о ссылках
