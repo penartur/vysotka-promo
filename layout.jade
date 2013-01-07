@@ -1,5 +1,9 @@
 mixin navLinks(currentPath)
 	+navLink(currentPath, '/', 'Главная')
+	+navLink(currentPath, '/flat', 'О квартире')
+	+navLink(currentPath, '/building', 'О доме')
+	+navLink(currentPath, '/photos', 'Фотографии')
+	+navLink(currentPath, '/links', 'Ссылки')
 
 mixin yandexPhoto(galleryId, title, yandexSrc)
 	a.fancybox.thumbnail(data-fancybox-group=galleryId, href=yandexSrc+'_XXXL.jpg', title=title)

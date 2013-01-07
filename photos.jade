@@ -1,0 +1,12 @@
+﻿extends layout
+
+append navLinks
+	+navLinks('/photos')
+
+append body
+	| Фотографии
+	ul#mainGallery.thumbnails
+		li
+			+yandexPhoto('mainGallery', 'Балкон', 'http://img-fotki.yandex.ru/get/5701/2391467.15/0_90270_a06344f2')
+		li
+			+yandexPhoto('mainGallery', 'Дом', 'http://img-fotki.yandex.ru/get/6601/2391467.15/0_92254_44340ac1')
