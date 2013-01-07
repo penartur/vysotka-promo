@@ -1,5 +1,17 @@
+mixin navLinks(currentPath)
+	+navLink(currentPath, '/', 'Главная')
+
+mixin yandexPhoto(galleryId, title, yandexSrc)
+	a.fancybox.thumbnail(data-fancybox-group=galleryId, href=yandexSrc+'_XXXL.jpg', title=title)
+		img.img-rounded(src=yandexSrc+'_M.jpg')
+
 mixin bootstrap
 	link(rel='stylesheet', type='text/css', href='http://twitter.github.com/bootstrap/assets/css/bootstrap.css')
+	style(type='text/css').
+		body {
+			padding-top: 60px;
+			padding-bottom: 40px;
+		}
 	link(rel='stylesheet', type='text/css', href='http://twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css')
 
 mixin jquery
@@ -17,9 +29,8 @@ mixin fancybox
 	script(type='text/javascript')
 		$(document).ready(function () { $(".fancybox").fancybox(); });
 
-mixin yandexPhoto(galleryId, title, yandexSrc)
-	a.fancybox.thumbnail(data-fancybox-group=galleryId, href=yandexSrc+'_XXXL.jpg', title=title)
-		img.img-rounded(src=yandexSrc+'_M.jpg')
+mixin navLink(currentPath, path, text)
+	li(class = (path == currentPath) && 'active'): a(href=path) #{text}
 
 !!!
 html
@@ -30,4 +41,12 @@ html
 		+fancybox
 
 	body
-		block body
+		.navbar.navbar-inverse.navbar-fixed-top
+			.navbar-inner
+				.container
+					a.brand(href='/') Пушкино, Высотка
+					.nav-collapse.collapse
+						ul.nav
+							block navLinks
+		.container
+			block body
