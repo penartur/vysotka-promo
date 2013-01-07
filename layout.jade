@@ -7,9 +7,12 @@ mixin navLinks(currentPath)
 	+navLink(currentPath, '/faq', 'FAQ')
 	+navLink(currentPath, '/links', 'Ссылки')
 
-mixin yandexPhoto(galleryId, title, yandexSrc)
-	a.fancybox.thumbnail(data-fancybox-group=galleryId, href=yandexSrc+'_XXXL.jpg', title=title)
-		img.img-rounded(src=yandexSrc+'_M.jpg')
+mixin yandexPhoto(galleryId, title, yandexSrc, size)
+	a.fancybox.thumbnail(data-fancybox-group=(galleryId || 'gallery'), href=yandexSrc+'_XXXL.jpg', title=title)
+		img.img-rounded(src=yandexSrc+'_' + (size || 'M') + '.jpg')
+
+mixin yandexPhotoS(galleryId, title, yandexSrc)
+	+yandexPhoto(galleryId, title, yandexSrc, 'S')
 
 mixin bootstrap
 	link(rel='stylesheet', type='text/css', href='http://twitter.github.com/bootstrap/assets/css/bootstrap.css')
