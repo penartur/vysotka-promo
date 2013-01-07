@@ -4,4 +4,43 @@ append navLinks
 	+navLinks('/')
 
 append body
-	| Высотка
+	.hero-unit
+		h1 Квартира в Пушкино, ЖК «Высотка»
+		p
+			:markdown
+				Продаётся однокомнатная квартира общей площадью 75.2 метра
+				с ремонтом и отделкой в Пушкино, 15км от МКАД,
+				ЖК бизнес-класса «Высотка».
+		p.lead
+			:markdown
+				Цена – **5 950 000** рублей.
+
+		address
+			:markdown
+				**Пишите:** todo@todo.todo
+
+		address
+			:markdown
+				**Звоните:** +7-todo-todo
+
+	.row
+		.span3
+			h2 О квартире
+			p todo текст о квартире
+			p todo thumbnail квартиры
+			p: a.btn(href='/flat') Подробнее
+		.span3
+			h2 О доме
+			p todo текст о доме
+			p todo thumbnail дома
+			p: a.btn(href='/building') Подробнее
+		.span3
+			h2 Фотографии
+			p todo текст о фотографиях
+			p todo thumbnail ещё чего-нибудь
+			p: a.btn(href='/photo') Подробнее
+		.span3
+			h2 Ссылки
+			p todo текст о ссылках
+			p todo thumbnail ???
+			p: a.btn(href='/links') Подробнее
