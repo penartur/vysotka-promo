@@ -8,7 +8,7 @@ mixin navLinks(currentPath)
 	+navLink(currentPath, '/links', 'Ссылки')
 
 mixin yandexPhoto(galleryId, title, yandexSrc, size)
-	a.fancybox.thumbnail(data-fancybox-group=(galleryId || 'gallery'), href=yandexSrc+'_XXXL.jpg', title=title)
+	a.fancybox.thumbnail(data-fancybox-group=(galleryId || 'default')+'Gallery', href=yandexSrc+'_XXXL.jpg', title=title)
 		img.img-rounded(src=yandexSrc+'_' + (size || 'M') + '.jpg')
 
 mixin yandexPhotoS(galleryId, title, yandexSrc)

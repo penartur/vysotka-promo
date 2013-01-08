@@ -1,12 +1,108 @@
 ﻿extends layout
 
+mixin bedroomThumbnail(yandexSrc, comment)
+	li
+		+yandexPhotoS('bedroom', comment || 'Спальня', yandexSrc)
+
+mixin bathroomThumbnail(yandexSrc, comment)
+	li
+		+yandexPhotoS('bathroom', comment || 'Санузел', yandexSrc)
+
+mixin kitchenThumbnail(yandexSrc, comment)
+	li
+		+yandexPhotoS('kitchen', comment || 'Зал', yandexSrc)
+
+mixin hallThumbnail(yandexSrc, comment)
+	li
+		+yandexPhotoS('hall', comment, yandexSrc)
+
+mixin balconyThumbnail(yandexSrc, comment)
+	li
+		+yandexPhotoS('balcony', comment || 'Балкон', yandexSrc)
+
+mixin viewThumbnail(yandexSrc, comment)
+	li
+		+yandexPhotoS('view', comment || 'Вид из окна', yandexSrc)
+
+mixin buildingInteriorThumbnail(yandexSrc, comment)
+	li
+		+yandexPhotoS('buildingInterior', comment, yandexSrc)
+
+mixin buildingExteriorThumbnail(yandexSrc, comment)
+	li
+		+yandexPhotoS('buildingExterior', comment || 'Дом', yandexSrc)
+
+
 append navLinks
 	+navLinks('/photos')
 
 append body
-	| Фотографии
+	.page-header
+		h1 Фотографии
+
+	h3 Спальня
 	ul#mainGallery.thumbnails
-		li
-			+yandexPhoto('mainGallery', 'Балкон', 'http://img-fotki.yandex.ru/get/5701/2391467.15/0_90270_a06344f2')
-		li
-			+yandexPhoto('mainGallery', 'Дом', 'http://img-fotki.yandex.ru/get/6601/2391467.15/0_92254_44340ac1')
+		+bedroomThumbnail('http://img-fotki.yandex.ru/get/5638/2391467.16/0_9d6c1_b52558bd')
+		+bedroomThumbnail('http://img-fotki.yandex.ru/get/6431/2391467.16/0_9d6c2_b92dcbee')
+		+bedroomThumbnail('http://img-fotki.yandex.ru/get/5638/2391467.16/0_9d6c3_d9cbb7b2')
+
+	hr
+
+	h3 Санузел
+	ul#mainGallery.thumbnails
+		+bathroomThumbnail('http://img-fotki.yandex.ru/get/6424/2391467.16/0_9d6bc_57fa041')
+		+bathroomThumbnail('http://img-fotki.yandex.ru/get/5634/2391467.16/0_9d6bd_4285ad82')
+		+bathroomThumbnail('http://img-fotki.yandex.ru/get/6441/2391467.16/0_9d6be_e0438339')
+		+bathroomThumbnail('http://img-fotki.yandex.ru/get/4133/2391467.16/0_9d6bf_4df03a78')
+		+bathroomThumbnail('http://img-fotki.yandex.ru/get/5630/2391467.16/0_9d6c0_95b1501e')
+
+	hr
+
+	h3 Зал
+	ul#mainGallery.thumbnails
+		+kitchenThumbnail('http://img-fotki.yandex.ru/get/4132/2391467.16/0_9d6cc_1abd786c')
+		+kitchenThumbnail('http://img-fotki.yandex.ru/get/5637/2391467.16/0_9d6cd_79d7d540')
+		+kitchenThumbnail('http://img-fotki.yandex.ru/get/5645/2391467.16/0_9d6d9_c168de07')
+
+	hr
+
+	h3 Холл (прихожая, коридор)
+	ul#mainGallery.thumbnails
+		+hallThumbnail('http://img-fotki.yandex.ru/get/6427/2391467.16/0_9d6cb_bb7d1959', 'Вид от входа')
+		+hallThumbnail('http://img-fotki.yandex.ru/get/5632/2391467.16/0_9d6ca_be32e4ba', 'Вид от входа')
+		+hallThumbnail('http://img-fotki.yandex.ru/get/4122/2391467.16/0_9d6c7_e6948609', 'Вход')
+		+hallThumbnail('http://img-fotki.yandex.ru/get/6435/2391467.16/0_9d6c9_7ab109d3', 'Входная дверь')
+		+hallThumbnail('http://img-fotki.yandex.ru/get/5637/2391467.16/0_9d6c8_f3da9083', 'Двери в зал и спальню')
+
+	hr
+
+	h3 Балкон
+	ul#mainGallery.thumbnails
+		+balconyThumbnail('http://img-fotki.yandex.ru/get/6440/2391467.16/0_9d6ba_1a3cb34f')
+		+balconyThumbnail('http://img-fotki.yandex.ru/get/6314/2391467.15/0_90272_2b405aa7')
+
+	hr
+
+	h3 Вид из окна
+	ul#mainGallery.thumbnails
+		+viewThumbnail('http://img-fotki.yandex.ru/get/6445/2391467.16/0_9d6c5_8f863f99')
+		+viewThumbnail('http://img-fotki.yandex.ru/get/5632/2391467.16/0_9d6c6_b28c99d1')
+
+	hr
+
+	h3 Подъезд
+	ul#mainGallery.thumbnails
+		+buildingInteriorThumbnail('http://img-fotki.yandex.ru/get/4122/2391467.16/0_9d6b3_2e8b967f', 'Лифтовый холл')
+		+buildingInteriorThumbnail('http://img-fotki.yandex.ru/get/5639/2391467.16/0_9d6b4_2462b958', 'Холл на первом этаже')
+		+buildingInteriorThumbnail('http://img-fotki.yandex.ru/get/6426/2391467.16/0_9d6b5_684ae49f', 'Холл на первом этаже')
+		+buildingInteriorThumbnail('http://img-fotki.yandex.ru/get/6447/2391467.16/0_9d6b9_14d2dfa1', 'Коридор девятого этажа')
+		+buildingInteriorThumbnail('http://img-fotki.yandex.ru/get/4133/2391467.16/0_9d6b6_8b40fa64', 'Коридор девятого этажа')
+		+buildingInteriorThumbnail('http://img-fotki.yandex.ru/get/4134/2391467.16/0_9d6b7_ba499caf', 'Холл девятого этажа')
+		+buildingInteriorThumbnail('http://img-fotki.yandex.ru/get/6428/2391467.16/0_9d6b8_4474a3cd', 'Холл девятого этажа')
+
+	hr
+
+	h3 Дом
+	ul#mainGallery.thumbnails
+		+buildingExteriorThumbnail('http://img-fotki.yandex.ru/get/6426/2391467.16/0_9d6c4_553c41e1')
+
