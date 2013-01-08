@@ -2,7 +2,8 @@
 mixin navBlock(image, url)
 	.span4
 		.thumbnail
-			img(src=image)
+			if (image)
+				img(src=image)
 			.caption
 				block
 				p: a.btn(href=url) Подробнее
@@ -24,7 +25,7 @@ append body
 				ЖК бизнес-класса «Высотка».
 		p.lead
 			:markdown
-				Цена – **5 990 000** рублей (возможен торг при просмотре).
+				Цена – **5 990 000** рублей (возможен торг).
 
 		address
 			:markdown
@@ -35,17 +36,17 @@ append body
 				**Звоните:** +7-926-631-7928
 
 	.row
-		+navBlock('http://img-fotki.yandex.ru/get/5407/2391467.15/0_9026e_6c519b53_L.jpg', '/flat')
-			p todo текст о квартире
-		+navBlock('http://img-fotki.yandex.ru/get/6404/2391467.15/0_9224c_870cbca4_L.jpg', '/building')
-			p todo текст о здании
-		+navBlock('http://img-fotki.yandex.ru/get/4419/2391467.6/0_728b8_52a57da4_L.jpg', '/photos')
-			p todo текст о фотографиях
+		+navBlock('http://img-fotki.yandex.ru/get/5638/2391467.16/0_9d6c1_b52558bd_L.jpg', '/flat')
+			p В квартире сделан современный ремонт...
+		+navBlock('http://img-fotki.yandex.ru/get/5639/2391467.16/0_9d6b4_2462b958_L.jpg', '/building')
+			p Монолитно-кирпичный дом 2010 года постройки...
+		+navBlock('http://img-fotki.yandex.ru/get/6445/2391467.16/0_9d6c5_8f863f99_L.jpg', '/photos')
+			p Фотографии
 	br
 	.row
-		+navBlock('http://lorempixel.com/500/375?todo-1', '/contract')
-			p todo текст о договоре
-		+navBlock('http://lorempixel.com/500/375?todo-2', '/faq')
-			p todo текст о часто задаваемых вопросах
-		+navBlock('http://lorempixel.com/500/375?todo-3', '/links')
-			p todo текст о ссылках
+		+navBlock('', '/contract')
+			p Юридическая информация
+		+navBlock('', '/faq')
+			p Ответы на вопросы
+		+navBlock('', '/links')
+			p Полезные ссылки
