@@ -1,0 +1,104 @@
+<!-- Этот блок кода нужно вставить в ту часть страницы, где вы хотите разместить карту (начало) -->
+<div id="ymaps-map-id_1357685043708829521733" style="width: 600px; height: 450px;"></div>
+<div style="width: 600px; text-align: right;"><a href="http://api.yandex.ru/maps/tools/constructor/index.xml" target="_blank" style="color: #1A3DC1; font: 13px Arial, Helvetica, sans-serif;">Создано с помощью инструментов Яндекс.Карт</a></div>
+<script type="text/javascript">
+function fid_1357685043708829521733(ymaps) {
+    var map = new ymaps.Map("ymaps-map-id_1357685043708829521733", {
+        center: [37.85629120125962, 56.00501826752475],
+        zoom: 15,
+        type: "yandex#map"
+    });
+    map.controls
+        .add("zoomControl")
+        .add("mapTools")
+        .add(new ymaps.control.TypeSelector(["yandex#map", "yandex#satellite", "yandex#hybrid", "yandex#publicMap"]));
+    map.geoObjects
+        .add(new ymaps.Placemark([37.85683541212848, 56.00012094154925], {
+            balloonContent: 'ЖК "Высотка"'
+        }, {
+            preset: "twirl#redDotIcon"
+        }))
+        .add(new ymaps.Placemark([37.85615949545672, 56.00046964255403], {
+            balloonContent: "Центральная взрослая поликлиника"
+        }, {
+            preset: "twirl#lightblueDotIcon"
+        }))
+        .add(new ymaps.Placemark([37.856580935302176, 55.99996267877865], {
+            balloonContent: '"Пятёрочка"'
+        }, {
+            preset: "twirl#lightblueDotIcon"
+        }))
+        .add(new ymaps.Placemark([37.85701795383557, 56.00411657857492], {
+            balloonContent: "Детский сад"
+        }, {
+            preset: "twirl#lightblueDotIcon"
+        }))
+        .add(new ymaps.Placemark([37.857125242196176, 56.00406247513313], {
+            balloonContent: "Детская поликлиника"
+        }, {
+            preset: "twirl#lightblueDotIcon"
+        }))
+        .add(new ymaps.Placemark([37.85723253055678, 56.00397831407246], {
+            balloonContent: "Стоматология"
+        }, {
+            preset: "twirl#lightblueDotIcon"
+        }))
+        .add(new ymaps.Placemark([37.85919818421525, 56.00437286329093], {
+            balloonContent: "Гимназия http://www.gimnazy.ru/"
+        }, {
+            preset: "twirl#lightblueDotIcon"
+        }))
+        .add(new ymaps.Placemark([37.852864565192064, 56.003477317085235], {
+            balloonContent: 'ТД "Пушкинский"'
+        }, {
+            preset: "twirl#lightblueDotIcon"
+        }))
+        .add(new ymaps.Placemark([37.8531001548805, 56.00515265754814], {
+            balloonContent: "Школа"
+        }, {
+            preset: "twirl#lightblueDotIcon"
+        }))
+        .add(new ymaps.Placemark([37.85838426630462, 56.00255277067695], {
+            balloonContent: 'Банк "Абсолют"'
+        }, {
+            preset: "twirl#lightblueDotIcon"
+        }))
+        .add(new ymaps.Placemark([37.85948694380089, 56.00071596192304], {
+            balloonContent: 'Аптека, "Дикси"'
+        }, {
+            preset: "twirl#lightblueDotIcon"
+        }))
+        .add(new ymaps.Placemark([37.85964787634178, 56.00128709963911], {
+            balloonContent: 'Банк "Пушкино"'
+        }, {
+            preset: "twirl#lightblueDotIcon"
+        }))
+        .add(new ymaps.Placemark([37.85834968717858, 56.00168989693127], {
+            balloonContent: "Хозяйственный магазин, стройматериалы"
+        }, {
+            preset: "twirl#lightblueDotIcon"
+        }))
+        .add(new ymaps.Placemark([37.84882344782008, 56.00456459204256], {
+            balloonContent: "Благоустроенная зона отдыха на озере"
+        }, {
+            preset: "twirl#lightblueDotIcon"
+        }))
+        .add(new ymaps.Placemark([37.86325434349838, 56.007606489322214], {
+            balloonContent: "Зона отдыха на реке (беседки, мангалы)"
+        }, {
+            preset: "twirl#lightblueDotIcon"
+        }))
+        .add(new ymaps.Placemark([37.8520508273599, 56.00853945569992], {
+            balloonContent: 'ТЦ "Вит", "Billa"'
+        }, {
+            preset: "twirl#lightblueDotIcon"
+        }))
+        .add(new ymaps.Placemark([37.853295372342814, 56.00930883019011], {
+            balloonContent: "Благоустроенная зона отдыха, фонтаны"
+        }, {
+            preset: "twirl#lightblueDotIcon"
+        }));
+};
+</script>
+<script type="text/javascript" src="http://api-maps.yandex.ru/2.0-stable/?lang=ru-RU&coordorder=longlat&load=package.full&wizard=constructor&onload=fid_1357685043708829521733"></script>
+<!-- Этот блок кода нужно вставить в ту часть страницы, где вы хотите разместить карту (конец) -->
