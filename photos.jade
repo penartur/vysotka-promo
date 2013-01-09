@@ -22,7 +22,7 @@ mixin balconyThumbnail(yandexSrc, comment)
 
 mixin viewThumbnail(yandexSrc, comment)
 	li
-		+yandexPhotoS('view', comment || 'Вид из окна', yandexSrc)
+		+yandexPhotoS('view', comment || 'Вид из окна квартиры', yandexSrc)
 
 mixin buildingInteriorThumbnail(yandexSrc, comment)
 	li
@@ -32,6 +32,9 @@ mixin buildingExteriorThumbnail(yandexSrc, comment)
 	li
 		+yandexPhotoS('buildingExterior', comment || 'Дом', yandexSrc)
 
+mixin infoThumbnail(yandexSrc, comment)
+	li
+		+yandexPhotoS('info', comment, yandexSrc)
 
 append navLinks
 	+navLinks('/photos')
@@ -41,7 +44,7 @@ append body
 		h1 Фотографии
 
 	h3 Спальня
-	ul#mainGallery.thumbnails
+	ul#bedroomGallery.thumbnails
 		+bedroomThumbnail('http://img-fotki.yandex.ru/get/5638/2391467.16/0_9d6c1_b52558bd')
 		+bedroomThumbnail('http://img-fotki.yandex.ru/get/6431/2391467.16/0_9d6c2_b92dcbee')
 		+bedroomThumbnail('http://img-fotki.yandex.ru/get/5638/2391467.16/0_9d6c3_d9cbb7b2')
@@ -49,7 +52,7 @@ append body
 	hr
 
 	h3 Санузел
-	ul#mainGallery.thumbnails
+	ul#bathroomGallery.thumbnails
 		+bathroomThumbnail('http://img-fotki.yandex.ru/get/6424/2391467.16/0_9d6bc_57fa041')
 		+bathroomThumbnail('http://img-fotki.yandex.ru/get/5634/2391467.16/0_9d6bd_4285ad82')
 		+bathroomThumbnail('http://img-fotki.yandex.ru/get/6441/2391467.16/0_9d6be_e0438339')
@@ -59,7 +62,7 @@ append body
 	hr
 
 	h3 Зал
-	ul#mainGallery.thumbnails
+	ul#kitchenGallery.thumbnails
 		+kitchenThumbnail('http://img-fotki.yandex.ru/get/4132/2391467.16/0_9d6cc_1abd786c')
 		+kitchenThumbnail('http://img-fotki.yandex.ru/get/5637/2391467.16/0_9d6cd_79d7d540')
 		+kitchenThumbnail('http://img-fotki.yandex.ru/get/5645/2391467.16/0_9d6d9_c168de07')
@@ -67,7 +70,7 @@ append body
 	hr
 
 	h3 Холл (прихожая, коридор)
-	ul#mainGallery.thumbnails
+	ul#hallGallery.thumbnails
 		+hallThumbnail('http://img-fotki.yandex.ru/get/6427/2391467.16/0_9d6cb_bb7d1959', 'Вид от входа')
 		+hallThumbnail('http://img-fotki.yandex.ru/get/5632/2391467.16/0_9d6ca_be32e4ba', 'Вид от входа')
 		+hallThumbnail('http://img-fotki.yandex.ru/get/4122/2391467.16/0_9d6c7_e6948609', 'Вход')
@@ -77,21 +80,22 @@ append body
 	hr
 
 	h3 Лоджия
-	ul#mainGallery.thumbnails
+	ul#balconyGallery.thumbnails
+		+balconyThumbnail('http://img-fotki.yandex.ru/get/6436/2391467.16/0_9d919_6885aef7')
 		+balconyThumbnail('http://img-fotki.yandex.ru/get/6440/2391467.16/0_9d6ba_1a3cb34f')
-		+balconyThumbnail('http://img-fotki.yandex.ru/get/6314/2391467.15/0_90272_2b405aa7')
 
 	hr
 
 	h3 Вид из окна
-	ul#mainGallery.thumbnails
+	ul#viewGallery.thumbnails
 		+viewThumbnail('http://img-fotki.yandex.ru/get/6445/2391467.16/0_9d6c5_8f863f99')
 		+viewThumbnail('http://img-fotki.yandex.ru/get/5632/2391467.16/0_9d6c6_b28c99d1')
 
 	hr
 
 	h3 Подъезд
-	ul#mainGallery.thumbnails
+	ul#buildingInteriorGallery.thumbnails
+		+buildingInteriorThumbnail('http://img-fotki.yandex.ru/get/4117/2391467.16/0_9d90d_820afea3', 'Холл на первом этаже')
 		+buildingInteriorThumbnail('http://img-fotki.yandex.ru/get/4122/2391467.16/0_9d6b3_2e8b967f', 'Лифтовый холл')
 		+buildingInteriorThumbnail('http://img-fotki.yandex.ru/get/5639/2391467.16/0_9d6b4_2462b958', 'Холл на первом этаже')
 		+buildingInteriorThumbnail('http://img-fotki.yandex.ru/get/6426/2391467.16/0_9d6b5_684ae49f', 'Холл на первом этаже')
@@ -103,6 +107,19 @@ append body
 	hr
 
 	h3 Дом
-	ul#mainGallery.thumbnails
+	ul#buildingExteriorGallery.thumbnails
 		+buildingExteriorThumbnail('http://img-fotki.yandex.ru/get/6426/2391467.16/0_9d6c4_553c41e1')
+		+buildingExteriorThumbnail('http://img-fotki.yandex.ru/get/6447/2391467.16/0_9d911_af9182af', 'Вход в жилую часть со стороны двора')
+		+buildingExteriorThumbnail('http://img-fotki.yandex.ru/get/6443/2391467.16/0_9d913_9311e09a', 'Вход в жилую часть со стороны двора')
+		+buildingExteriorThumbnail('http://img-fotki.yandex.ru/get/4127/2391467.16/0_9d90f_d436f90e', 'Стоянка для жителей ЖК "Высотка"')
+		+buildingExteriorThumbnail('http://img-fotki.yandex.ru/get/4138/2391467.16/0_9d910_cef7374a', 'Стоянка для жителей ЖК "Высотка"')
+		+buildingExteriorThumbnail('http://img-fotki.yandex.ru/get/6437/2391467.16/0_9d912_b72a07d1', 'Детская площадка во дворе')
 
+	hr
+
+	h3 Полезная информация
+	ul#infoGallery.thumbnails
+		+infoThumbnail('http://img-fotki.yandex.ru/get/4137/2391467.16/0_9d59f_e0215f3b', 'Планировка БТИ')
+		+infoThumbnail('http://img-fotki.yandex.ru/get/4130/2391467.16/0_9d5a0_c3608e18', 'Экспликация БТИ')
+		+infoThumbnail('http://img-fotki.yandex.ru/get/5624/2391467.16/0_9d5a1_b6533ea0', 'Планировка от застройщика (площади указаны неверно')
+		+infoThumbnail('http://img-fotki.yandex.ru/get/4120/2391467.16/0_9d5a2_6a2ac266', 'План типового этажа от застройщика')
