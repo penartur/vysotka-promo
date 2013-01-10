@@ -29,18 +29,23 @@ append body
 			
 					div(itemscope, itemprop='offers', itemtype='http://schema.org/Offer')
 						meta(itemprop='price', content='5990000')
+						meta(itemprop='priceCurrency', content='RUB')
 						link(itemprop='availability', href='http://schema.org/InStock')
 						p.lead
 							:markdown
 								Цена – **5 990 000** рублей (возможен торг).
 
-					address
-						:markdown
-							**Пишите:** [pushkino.vysotka.2013@gmail.com](mailto:pushkino.vysotka.2013@gmail.com)
+						div(itemprop='seller', itemscope, itemtype='http://schema.org/Person')
+							meta(itemprop='name', content='Собственник')
+							meta(itemprop='email', content='pushkino.vysotka.2013@gmail.com')
+							meta(itemprop='telephone', content='+7-926-631-7928')
+							address
+								:markdown
+									**Пишите:** [pushkino.vysotka.2013@gmail.com](mailto:pushkino.vysotka.2013@gmail.com)
 
-					address
-						:markdown
-							**Звоните:** +7-926-631-7928
+							address
+								:markdown
+									**Звоните:** +7-926-631-7928
 
 				.span4
 					.thumbnail
