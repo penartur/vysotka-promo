@@ -15,28 +15,39 @@ append navLinks
 
 append body
 	.hero-unit
-		h1 Квартира в Пушкино, ЖК «Высотка»
-		p
-			:markdown
-				Продаётся квартира с одной спальней,
-				общей площадью 75.2 метра
-				с отделкой, мебелью и техникой
-				в городе Пушкино, 15км от МКАД,
-				ЖК бизнес-класса «Высотка».
-		p.lead
-			:markdown
-				Цена – **5 990 000** рублей (возможен торг).
+		div(itemscope, itemtype='http://schema.org/Product')
+			h1(itemprop='name') Квартира в Пушкино, ЖК «Высотка»
+			.row-fluid
+				.span8
+					p(itemprop='description')
+						:markdown
+							Продаётся квартира с одной спальней,
+							общей площадью 75.2 метра
+							с отделкой, мебелью и техникой
+							в городе Пушкино, 15км от МКАД,
+							ЖК бизнес-класса «Высотка».
+			
+					div(itemscope, itemprop='offers', itemtype='http://schema.org/Offer')
+						meta(itemprop='price', content='5990000')
+						link(itemprop='availability', href='http://schema.org/InStock')
+						p.lead
+							:markdown
+								Цена – **5 990 000** рублей (возможен торг).
 
-		address
-			:markdown
-				**Пишите:** [pushkino.vysotka.2013@gmail.com](mailto:pushkino.vysotka.2013@gmail.com)
+					address
+						:markdown
+							**Пишите:** [pushkino.vysotka.2013@gmail.com](mailto:pushkino.vysotka.2013@gmail.com)
 
-		address
-			:markdown
-				**Звоните:** +7-926-631-7928
+					address
+						:markdown
+							**Звоните:** +7-926-631-7928
+
+				.span4
+					.thumbnail
+						img(itemprop='image', src='http://img-fotki.yandex.ru/get/5638/2391467.16/0_9d6c1_b52558bd_L.jpg')
 
 	.row
-		+navBlock('http://img-fotki.yandex.ru/get/5638/2391467.16/0_9d6c1_b52558bd_L.jpg', '/flat')
+		+navBlock('http://img-fotki.yandex.ru/get/6424/2391467.16/0_9d6bc_57fa041_L.jpg', '/flat')
 			p В квартире сделан современный ремонт...
 		+navBlock('http://img-fotki.yandex.ru/get/5639/2391467.16/0_9d6b4_2462b958_L.jpg', '/building')
 			p Монолитно-кирпичный дом 2010 года постройки...
