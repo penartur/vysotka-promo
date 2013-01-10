@@ -1,5 +1,8 @@
 ﻿extends layout
 
+append meta
+	+meta(['Фотографии', 'Фотографии дома', 'Фотографии квартиры', 'Фотографии ремонта', 'Вид из окна'])
+
 mixin bedroomThumbnail(yandexSrc, comment)
 	li
 		+yandexPhotoS('bedroom', comment || 'Спальня', yandexSrc)

@@ -1,5 +1,8 @@
 ﻿extends layout
 
+append meta
+	+meta('Полезные ссылки')
+
 append navLinks
 	+navLinks('/links')
 
@@ -14,3 +17,7 @@ append body
 	.well
 		h2 Форум жильцов дома
 		p: a(href='http://forum.pushkino.org/index.php?/forum/89-%D0%B2%D1%8B%D1%81%D0%BE%D1%82%D0%BA%D0%B0/') http://forum.pushkino.org/index.php?/forum/89-высотка/
+
+	.well
+		h2 Статья о городе в Википедии
+		p: a(href='https://ru.wikipedia.org/wiki/%D0%9F%D1%83%D1%88%D0%BA%D0%B8%D0%BD%D0%BE') https://ru.wikipedia.org/wiki/Пушкино
