@@ -1,14 +1,21 @@
+pages = { '/': 'Главная', '/flat': 'О квартире', '/building': 'О доме', '/photos': 'Фотографии', '/contract': 'Юридические вопросы', '/faq': 'FAQ', '/links': 'Полезные ссылки' }
+
 mixin navLinks(currentPath)
-	+navLink(currentPath, '/', 'Главная')
-	+navLink(currentPath, '/flat', 'О квартире')
-	+navLink(currentPath, '/building', 'О доме')
-	+navLink(currentPath, '/photos', 'Фотографии')
-	+navLink(currentPath, '/contract', 'О договоре')
-	+navLink(currentPath, '/faq', 'FAQ')
-	+navLink(currentPath, '/links', 'Ссылки')
+	each title, link in pages
+		+navLink(currentPath, link, title)
 
 mixin meta(specificKeywords)
 	meta(name='keywords', content=['Пушкино Высотка', 'Квартира в Пушкино', 'Квартира в Высотке', '50 лет Комсомола 49', 'Купить квартиру в Пушкино', 'Купить квартиру в Высотке'].concat(specificKeywords || []).join(', '))
+
+mixin title(currentPath)
+	if currentPath == '/'
+		title Квартира в ЖК "Высотка" в Пушкино
+	else
+		title Квартира в ЖК "Высотка" в Пушкино — #{pages[currentPath]}
+
+mixin header(currentPath)
+	.page-header
+		h1 #{pages[currentPath]}
 
 mixin yandexPhoto(galleryId, title, yandexSrc, size)
 	a.fancybox.thumbnail(data-fancybox-group=(galleryId || 'default')+'Gallery', href=yandexSrc+'_XXXL.jpg', title=title)
@@ -49,7 +56,7 @@ html
 	head
 		meta(charset='utf-8')
 		block meta
-		title Квартира в ЖК "Высотка", Пушкино
+		block title
 		+bootstrap
 		+jquery
 		+fancybox

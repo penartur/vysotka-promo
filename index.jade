@@ -10,11 +10,14 @@ mixin navBlock(image, url)
 
 extends layout
 
+append meta
+	+meta
+
 append navLinks
 	+navLinks('/')
 
-append meta
-	+meta
+append title
+	+title('/')
 
 append body
 	.hero-unit

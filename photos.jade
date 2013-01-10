@@ -42,9 +42,11 @@ mixin infoThumbnail(yandexSrc, comment)
 append navLinks
 	+navLinks('/photos')
 
+append title
+	+title('/photos')
+
 append body
-	.page-header
-		h1 Фотографии
+	+header('/photos')
 
 	h3 Спальня
 	ul#bedroomGallery.thumbnails

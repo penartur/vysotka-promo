@@ -6,9 +6,12 @@ append meta
 append navLinks
 	+navLinks('/links')
 
+append title
+	+title('/links')
+
 append body
-	.page-header
-		h1 Полезные ссылки
+	+header('/links')
+
 	.well
 		h2 Сайт застройщика
 		p: a(href='http://vysotka.su') http://vysotka.su

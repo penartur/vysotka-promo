@@ -6,6 +6,9 @@ append meta
 append navLinks
 	+navLinks('/building')
 
+append title
+	+title('/building')
+
 append body
 	div(itemscope, itemtype='http://schema.org/ApartmentComplex')
 		meta(itemprop='name', content='ЖК "Высотка"')
@@ -20,8 +23,7 @@ append body
 		meta(itemprop='map', content='http://maps.yandex.ru/-/CVFW7YpW')
 		meta(itemprop='telephone', content='+7-926-631-7928')
 
-		.page-header
-			h1 О доме
+		+header('/building')
 
 		h2 Расположение
 		p(itemprop='description')
