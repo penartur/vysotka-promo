@@ -5,7 +5,7 @@ mixin navLinks(currentPath)
 		+navLink(currentPath, link, title)
 
 mixin meta(specificKeywords)
-	meta(name='keywords', content=['Пушкино Высотка', 'Квартира в Пушкино', 'Квартира в Высотке', '50 лет Комсомола 49', 'Купить квартиру в Пушкино', 'Купить квартиру в Высотке'].concat(specificKeywords || []).join(', '))
+	meta(name='keywords', content=['Пушкино Высотка', 'Высотка Пушкино', 'Пушкино ЖК Высотка', 'ЖК Высотка Пушкино', 'Квартира в Пушкино', 'Квартира в Высотке', '50 лет Комсомола 49', 'Пушкино 50 лет Комсомола 49', '50 лет Комсомола 49 квартиры', 'Пушкино 50 лет Комсомола 49 квартиры', 'Купить квартиру в Пушкино', 'Купить квартиру в Высотке'].concat(specificKeywords || []).join(', '))
 
 mixin title(currentPath)
 	if currentPath == '/'
