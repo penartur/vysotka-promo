@@ -3,25 +3,25 @@
 append meta
 	+meta(['Фотографии', 'Фотографии дома', 'Фотографии квартиры', 'Фотографии ремонта', 'Вид из окна'])
 
-mixin bedroomThumbnail(yandexSrc, comment)
+mixin bedroomThumbnail(name, comment)
 	li
-		+yandexPhotoS('bedroom', comment || 'Спальня', yandexSrc)
+		+localPhoto('bedroom', comment || 'Спальня', 'bedroom/' + name)
 
-mixin bathroomThumbnail(yandexSrc, comment)
+mixin bathroomThumbnail(name, comment)
 	li
-		+yandexPhotoS('bathroom', comment || 'Санузел', yandexSrc)
+		+localPhoto('bathroom', comment || 'Санузел', 'bathroom/' + name)
 
-mixin kitchenThumbnail(yandexSrc, comment)
+mixin kitchenThumbnail(name, comment)
 	li
-		+yandexPhotoS('kitchen', comment || 'Зал', yandexSrc)
+		+localPhoto('kitchen', comment || 'Зал', 'livingroom/' + name)
 
-mixin hallThumbnail(yandexSrc, comment)
+mixin hallThumbnail(name, comment)
 	li
-		+yandexPhotoS('hall', comment, yandexSrc)
+		+localPhoto('hall', comment, 'hallway/' + name)
 
-mixin balconyThumbnail(yandexSrc, comment)
+mixin balconyThumbnail(name, comment)
 	li
-		+yandexPhotoS('balcony', comment || 'Балкон', yandexSrc)
+		+localPhoto('balcony', comment || 'Балкон', 'balcony/' + name)
 
 mixin viewThumbnail(yandexSrc, comment)
 	li
@@ -50,44 +50,46 @@ append body
 
 	h3 Спальня
 	ul#bedroomGallery.thumbnails
-		+bedroomThumbnail('http://img-fotki.yandex.ru/get/5638/2391467.16/0_9d6c1_b52558bd')
-		+bedroomThumbnail('http://img-fotki.yandex.ru/get/6431/2391467.16/0_9d6c2_b92dcbee')
-		+bedroomThumbnail('http://img-fotki.yandex.ru/get/5638/2391467.16/0_9d6c3_d9cbb7b2')
+		+bedroomThumbnail('SAM_1078_s')
+		+bedroomThumbnail('SAM_1316_s')
+		+bedroomThumbnail('SAM_1318_s')
+		+bedroomThumbnail('SAM_1319_s')
+		+bedroomThumbnail('SAM_1381_s')
 
 	hr
 
 	h3 Санузел
 	ul#bathroomGallery.thumbnails
-		+bathroomThumbnail('http://img-fotki.yandex.ru/get/6424/2391467.16/0_9d6bc_57fa041')
-		+bathroomThumbnail('http://img-fotki.yandex.ru/get/5634/2391467.16/0_9d6bd_4285ad82')
-		+bathroomThumbnail('http://img-fotki.yandex.ru/get/6441/2391467.16/0_9d6be_e0438339')
-		+bathroomThumbnail('http://img-fotki.yandex.ru/get/4133/2391467.16/0_9d6bf_4df03a78')
-		+bathroomThumbnail('http://img-fotki.yandex.ru/get/5630/2391467.16/0_9d6c0_95b1501e')
+		+bathroomThumbnail('SAM_1299_s')
+		+bathroomThumbnail('SAM_1300_s')
+		+bathroomThumbnail('SAM_1302_s')
+		+bathroomThumbnail('SAM_1303_s')
 
 	hr
 
 	h3 Зал
 	ul#kitchenGallery.thumbnails
-		+kitchenThumbnail('http://img-fotki.yandex.ru/get/4132/2391467.16/0_9d6cc_1abd786c')
-		+kitchenThumbnail('http://img-fotki.yandex.ru/get/5637/2391467.16/0_9d6cd_79d7d540')
-		+kitchenThumbnail('http://img-fotki.yandex.ru/get/5645/2391467.16/0_9d6d9_c168de07')
+		+kitchenThumbnail('SAM_1279_s')
+		+kitchenThumbnail('SAM_1284_s')
+		+kitchenThumbnail('SAM_1286_s')
+		+kitchenThumbnail('SAM_1294_s')
+		+kitchenThumbnail('SAM_1297_s')
+		+kitchenThumbnail('SAM_1385_s')
 
 	hr
 
 	h3 Холл (прихожая, коридор)
 	ul#hallGallery.thumbnails
-		+hallThumbnail('http://img-fotki.yandex.ru/get/6427/2391467.16/0_9d6cb_bb7d1959', 'Вид от входа')
-		+hallThumbnail('http://img-fotki.yandex.ru/get/5632/2391467.16/0_9d6ca_be32e4ba', 'Вид от входа')
-		+hallThumbnail('http://img-fotki.yandex.ru/get/4122/2391467.16/0_9d6c7_e6948609', 'Вход')
-		+hallThumbnail('http://img-fotki.yandex.ru/get/6435/2391467.16/0_9d6c9_7ab109d3', 'Входная дверь')
-		+hallThumbnail('http://img-fotki.yandex.ru/get/5637/2391467.16/0_9d6c8_f3da9083', 'Двери в зал и спальню')
+		+hallThumbnail('SAM_1397_s', 'Прихожая')
+		+hallThumbnail('SAM_1405_s', 'Коридор')
 
 	hr
 
 	h3 Лоджия
 	ul#balconyGallery.thumbnails
-		+balconyThumbnail('http://img-fotki.yandex.ru/get/6436/2391467.16/0_9d919_6885aef7')
-		+balconyThumbnail('http://img-fotki.yandex.ru/get/6440/2391467.16/0_9d6ba_1a3cb34f')
+		+balconyThumbnail('SAM_1393_s')
+		+balconyThumbnail('SAM_1395_s')
+		+balconyThumbnail('SAM_1396_s')
 
 	hr
 

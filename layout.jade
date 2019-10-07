@@ -24,6 +24,10 @@ mixin yandexPhoto(galleryId, title, yandexSrc, size)
 mixin yandexPhotoS(galleryId, title, yandexSrc)
 	+yandexPhoto(galleryId, title, yandexSrc, 'S')
 
+mixin localPhoto(galleryId, title, originalSrc, size)
+	a.fancybox.thumbnail(data-fancybox-group=(galleryId || 'default')+'Gallery', href='photos/'+originalSrc+'.jpg', title=title)
+		img.img-rounded(src=originalSrc+'.' + (size || 'small') + '.jpg')
+
 mixin bootstrap
 	link(rel='stylesheet', type='text/css', href='http://getbootstrap.com/2.3.2/assets/css/bootstrap.css')
 	style(type='text/css').
