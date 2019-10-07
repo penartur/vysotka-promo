@@ -21,7 +21,7 @@ append title
 
 append beforeBody
 	.jumbotron
-		.container(itemscope, itemtype='http://schema.org/Product')
+		.container(itemscope, itemtype='https://schema.org/Product')
 			.row
 				.col-xs-12.col-md-8
 					h1.display-4(itemprop='name') Квартира в Пушкино, ЖК «Высотка»
@@ -33,15 +33,15 @@ append beforeBody
 							в городе Пушкино, 15км от МКАД,
 							ЖК бизнес-класса «Высотка».
 			
-					div(itemscope, itemprop='offers', itemtype='http://schema.org/Offer')
+					div(itemscope, itemprop='offers', itemtype='https://schema.org/Offer')
 						meta(itemprop='price', content='6800000')
 						meta(itemprop='priceCurrency', content='RUB')
-						link(itemprop='availability', href='http://schema.org/InStock')
+						link(itemprop='availability', href='https://schema.org/InStock')
 						p.lead
 							:markdown
 								Цена – **6 800 000** рублей.
 
-						div(itemprop='seller', itemscope, itemtype='http://schema.org/Person')
+						div(itemprop='seller', itemscope, itemtype='https://schema.org/Person')
 							meta(itemprop='name', content='Собственник')
 							meta(itemprop='email', content='pushkino-vysotka-sale@outlook.com')
 							meta(itemprop='telephone', content='+7-999-554-6066')
@@ -54,18 +54,18 @@ append beforeBody
 									**Звоните:** [+7-999-554-6066](tel:+79995546066)
 
 				.col-xs-12.col-md-4
-					img.img-fluid(itemprop='image', src='http://img-fotki.yandex.ru/get/5638/2391467.16/0_9d6c1_b52558bd_L.jpg')
+					img.img-fluid(itemprop='image', src='https://img-fotki.yandex.ru/get/5638/2391467.16/0_9d6c1_b52558bd_L.jpg')
 
 append body
 	.hero-unit
-		div(itemscope, itemtype='http://schema.org/Product')
+		div(itemscope, itemtype='https://schema.org/Product')
 
 	.row
-		+navBlock('http://img-fotki.yandex.ru/get/6424/2391467.16/0_9d6bc_57fa041_L.jpg', '/flat')
+		+navBlock('https://img-fotki.yandex.ru/get/6424/2391467.16/0_9d6bc_57fa041_L.jpg', '/flat')
 			p В квартире сделан современный ремонт...
-		+navBlock('http://img-fotki.yandex.ru/get/5639/2391467.16/0_9d6b4_2462b958_L.jpg', '/building')
+		+navBlock('https://img-fotki.yandex.ru/get/5639/2391467.16/0_9d6b4_2462b958_L.jpg', '/building')
 			p Монолитно-кирпичный дом 2010 года постройки...
-		+navBlock('http://img-fotki.yandex.ru/get/6445/2391467.16/0_9d6c5_8f863f99_L.jpg', '/photos')
+		+navBlock('https://img-fotki.yandex.ru/get/6445/2391467.16/0_9d6c5_8f863f99_L.jpg', '/photos')
 			p Фотографии
 		+navBlock('', '/contract')
 			p Юридическая информация

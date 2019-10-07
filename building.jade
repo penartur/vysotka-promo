@@ -10,17 +10,17 @@ append title
 	+title('/building')
 
 append body
-	div(itemscope, itemtype='http://schema.org/ApartmentComplex')
+	div(itemscope, itemtype='https://schema.org/ApartmentComplex')
 		meta(itemprop='name', content='ЖК "Высотка"')
-		div(itemprop='address', itemscope, itemtype="http://schema.org/PostalAddress")
+		div(itemprop='address', itemscope, itemtype="https://schema.org/PostalAddress")
 			meta(itemprop='addressCountry', content='RU')
 			meta(itemprop='addressRegion', content='Московская область')
 			meta(itemprop='addressLocality', content='Пушкино')
 			meta(itemprop='streetAddress', content='50 лет Комсомола, д.49')
-		div(itemprop='geo', itemscope, itemtype='http://schema.org/GeoCoordinates')
+		div(itemprop='geo', itemscope, itemtype='https://schema.org/GeoCoordinates')
 			meta(itemprop='latitude', content='56.000016')
 			meta(itemprop='longitude', content='37.857600')
-		meta(itemprop='map', content='http://maps.yandex.ru/-/CVFW7YpW')
+		meta(itemprop='map', content='https://maps.yandex.ru/-/CVFW7YpW')
 		meta(itemprop='telephone', content='+7-926-631-7928')
 
 		+header('/building')
@@ -29,7 +29,7 @@ append body
 		p(itemprop='description')
 			:markdown
 				Дом расположен в восточной (основной) части Пушкино, в одном километре от главной площади, в обжитом квартале,
-				по адресу: [50 лет Комсомола, д.49](http://maps.yandex.ru/-/CVFW7YpW).
+				по адресу: [50 лет Комсомола, д.49](https://maps.yandex.ru/-/CVFW7YpW).
 
 				В непосредственной близости от дома есть магазины, торговые центры, поликлиника, стоматология, детские сады, школы.
 
@@ -48,12 +48,14 @@ append body
 				Время в пути до Ярославского вокзала для обычных электричек,
 				частота отправления которых в час пик доходит до 5 минут,
 				составляет от 30 до 50 минут.
-				[Расписание электричек](http://rasp.yandex.ru/-/CVFOuYkQ).
+				Сейчас строятся новые ж/д пути, которые позволят повысить частоту электричек и снизить время в пути.
+				Ориентировочное время окончания строительства - конец 2019 года; до тех пор, во время ремонта, электрички едут чуть медленнее, чем обычно.
+				[Расписание электричек](https://rasp.yandex.ru/all-transport/pushkino-train-station--moscow-yaroslavskaya).
 
 				На автобусе можно доехать в ближайшие города (Мытищи, Королёв, Ивантеевка, Щёлково и прочие) или в Москву.
 
-				Выезд на своём автомобиле в Москву возможен как [через Ярославское шоссе](http://maps.yandex.ru/-/CVFOuYjf),
-				так и [через обычно свободное Пироговское шоссе](http://maps.yandex.ru/-/CVFOu49q).
+				Выезд на своём автомобиле в Москву возможен как [через Ярославское шоссе](https://maps.yandex.ru/-/CVFOuYjf),
+				так и [через обычно свободное Пироговское шоссе](https://maps.yandex.ru/-/CVFOu49q).
 
 		hr
 
@@ -85,10 +87,10 @@ append body
 
 						В огороженном дворе – детская площадка.
 			.col-xs-12.col-md-4
-				img.img-fluid(itemprop='photo', src='http://img-fotki.yandex.ru/get/6426/2391467.16/0_9d6c4_553c41e1_L.jpg')
+				img.img-fluid(itemprop='photo', src='https://img-fotki.yandex.ru/get/6426/2391467.16/0_9d6c4_553c41e1_L.jpg')
 
 		.row
-			+yandexPhotoS('buildingGallery', 'Холл на первом этаже', 'http://img-fotki.yandex.ru/get/4117/2391467.16/0_9d90d_820afea3')
-			+yandexPhotoS('buildingGallery', 'Вход в жилую часть со двора', 'http://img-fotki.yandex.ru/get/6447/2391467.16/0_9d911_af9182af')
-			+yandexPhotoS('buildingGallery', 'Детская площадка во дворе', 'http://img-fotki.yandex.ru/get/6437/2391467.16/0_9d912_b72a07d1')
-			+yandexPhotoS('buildingGallery', 'Охраняемая стоянка для жителей дома', 'http://img-fotki.yandex.ru/get/4127/2391467.16/0_9d90f_d436f90e')
+			+yandexPhotoS('buildingGallery', 'Холл на первом этаже', 'https://img-fotki.yandex.ru/get/4117/2391467.16/0_9d90d_820afea3')
+			+yandexPhotoS('buildingGallery', 'Вход в жилую часть со двора', 'https://img-fotki.yandex.ru/get/6447/2391467.16/0_9d911_af9182af')
+			+yandexPhotoS('buildingGallery', 'Детская площадка во дворе', 'https://img-fotki.yandex.ru/get/6437/2391467.16/0_9d912_b72a07d1')
+			+yandexPhotoS('buildingGallery', 'Охраняемая стоянка для жителей дома', 'https://img-fotki.yandex.ru/get/4127/2391467.16/0_9d90f_d436f90e')
