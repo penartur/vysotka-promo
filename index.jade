@@ -1,12 +1,12 @@
 ﻿
 mixin navBlock(image, url)
-	.span4
-		.thumbnail
+	.col-xs-6.col-md-4
+		.card.mb-4
 			if (image)
-				img(src=image)
-			.caption
+				img.card-img-top(src=image)
+			.card-body
 				block
-				p: a.btn(href=url) Подробнее
+				p: a.btn.btn-primary(href=url) Подробнее
 
 extends layout
 
@@ -19,12 +19,12 @@ append navLinks
 append title
 	+title('/')
 
-append body
-	.hero-unit
-		div(itemscope, itemtype='http://schema.org/Product')
-			h1(itemprop='name') Квартира в Пушкино, ЖК «Высотка»
-			.row-fluid
-				.span8
+append beforeBody
+	.jumbotron
+		.container(itemscope, itemtype='http://schema.org/Product')
+			.row
+				.col-xs-12.col-md-8
+					h1.display-4(itemprop='name') Квартира в Пушкино, ЖК «Высотка»
 					p(itemprop='description')
 						:markdown
 							Продаётся квартира с одной спальней,
@@ -51,11 +51,14 @@ append body
 
 							address
 								:markdown
-									**Звоните:** +7-999-554-6066
+									**Звоните:** [+7-999-554-6066](tel:+79995546066)
 
-				.span4
-					.thumbnail
-						img(itemprop='image', src='http://img-fotki.yandex.ru/get/5638/2391467.16/0_9d6c1_b52558bd_L.jpg')
+				.col-xs-12.col-md-4
+					img.img-fluid(itemprop='image', src='http://img-fotki.yandex.ru/get/5638/2391467.16/0_9d6c1_b52558bd_L.jpg')
+
+append body
+	.hero-unit
+		div(itemscope, itemtype='http://schema.org/Product')
 
 	.row
 		+navBlock('http://img-fotki.yandex.ru/get/6424/2391467.16/0_9d6bc_57fa041_L.jpg', '/flat')
@@ -64,8 +67,6 @@ append body
 			p Монолитно-кирпичный дом 2010 года постройки...
 		+navBlock('http://img-fotki.yandex.ru/get/6445/2391467.16/0_9d6c5_8f863f99_L.jpg', '/photos')
 			p Фотографии
-	br
-	.row
 		+navBlock('', '/contract')
 			p Юридическая информация
 		+navBlock('', '/faq')

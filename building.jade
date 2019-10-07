@@ -58,8 +58,8 @@ append body
 		hr
 
 		h2 Устройство
-		.row-fluid
-			.span9
+		.row
+			.col-xs-12.col-md-8
 				p
 					:markdown
 						Дом монолитный, сдан в 2010 году, построен по индивидуальному проекту.
@@ -84,16 +84,11 @@ append body
 						Имеется охраняемая придомовая автостоянка (только для жителей дома).
 
 						В огороженном дворе – детская площадка.
-			.span3
-				.thumbnail
-					img(itemprop='photo', src='http://img-fotki.yandex.ru/get/6426/2391467.16/0_9d6c4_553c41e1_L.jpg')
+			.col-xs-12.col-md-4
+				img.img-fluid(itemprop='photo', src='http://img-fotki.yandex.ru/get/6426/2391467.16/0_9d6c4_553c41e1_L.jpg')
 
-		ul.thumbnails
-			li
-				+yandexPhotoS('buildingGallery', 'Холл на первом этаже', 'http://img-fotki.yandex.ru/get/4117/2391467.16/0_9d90d_820afea3')
-			li
-				+yandexPhotoS('buildingGallery', 'Вход в жилую часть со двора', 'http://img-fotki.yandex.ru/get/6447/2391467.16/0_9d911_af9182af')
-			li
-				+yandexPhotoS('buildingGallery', 'Детская площадка во дворе', 'http://img-fotki.yandex.ru/get/6437/2391467.16/0_9d912_b72a07d1')
-			li
-				+yandexPhotoS('buildingGallery', 'Охраняемая стоянка для жителей дома', 'http://img-fotki.yandex.ru/get/4127/2391467.16/0_9d90f_d436f90e')
+		.row
+			+yandexPhotoS('buildingGallery', 'Холл на первом этаже', 'http://img-fotki.yandex.ru/get/4117/2391467.16/0_9d90d_820afea3')
+			+yandexPhotoS('buildingGallery', 'Вход в жилую часть со двора', 'http://img-fotki.yandex.ru/get/6447/2391467.16/0_9d911_af9182af')
+			+yandexPhotoS('buildingGallery', 'Детская площадка во дворе', 'http://img-fotki.yandex.ru/get/6437/2391467.16/0_9d912_b72a07d1')
+			+yandexPhotoS('buildingGallery', 'Охраняемая стоянка для жителей дома', 'http://img-fotki.yandex.ru/get/4127/2391467.16/0_9d90f_d436f90e')

@@ -14,75 +14,83 @@ mixin title(currentPath)
 		title Квартира в ЖК "Высотка" в Пушкино — #{pages[currentPath]}
 
 mixin header(currentPath)
-	.page-header
-		h1 #{pages[currentPath]}
+	h1 #{pages[currentPath]}
 
-mixin yandexPhoto(galleryId, title, yandexSrc, size)
-	a.fancybox.thumbnail(data-fancybox-group=(galleryId || 'default')+'Gallery', href=yandexSrc+'_XXXL.jpg', title=title)
-		img.img-rounded(src=yandexSrc+'_' + (size || 'M') + '.jpg')
+mixin photo(galleryId, title, srcOriginal, srcThumbnail)
+	a.col-sm-4(data-toggle='lightbox', data-gallery=(galleryId || 'default')+'Gallery', href=srcOriginal, title=title)
+		img.img-fluid.img-thumbnail(src=srcThumbnail)
 
 mixin yandexPhotoS(galleryId, title, yandexSrc)
-	+yandexPhoto(galleryId, title, yandexSrc, 'S')
+	+photo(galleryId, title, yandexSrc+'_XXXL.jpg', yandexSrc+'_S.jpg')
 
-mixin localPhoto(galleryId, title, originalSrc, size)
-	a.fancybox.thumbnail(data-fancybox-group=(galleryId || 'default')+'Gallery', href='photos/'+originalSrc+'.jpg', title=title)
-		img.img-rounded(src=originalSrc+'.' + (size || 'small') + '.jpg')
+mixin localPhoto(galleryId, title, originalSrc)
+	+photo(galleryId, title, 'photos/'+originalSrc+'.jpg', 'photos/'+originalSrc+'.small.jpg')
 
 mixin bootstrap
-	link(rel='stylesheet', type='text/css', href='http://getbootstrap.com/2.3.2/assets/css/bootstrap.css')
+	link(rel='stylesheet', type='text/css', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin='anonymous')
 	style(type='text/css').
 		body {
-			padding-top: 60px;
-			padding-bottom: 40px;
+			padding-top: 3.5rem;
 		}
-	link(rel='stylesheet', type='text/css', href='http://getbootstrap.com/2.3.2/assets/css/bootstrap-responsive.css')
 
-mixin jquery
-	script(type='text/javascript', src='http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')
-	
-mixin fancybox
-	script(type='text/javascript', src='/ThirdParty/fancybox/lib/jquery.mousewheel-3.0.6.pack.js')
+		.footer {
+			background-color: #f5f5f5;
+		}
 
-	script(type='text/javascript', src='/ThirdParty/fancybox/source/jquery.fancybox.js?v=2.1.4')
-	link(rel='stylesheet', type='text/css', href='/ThirdParty/fancybox/source/jquery.fancybox.css?v=2.1.4')
+		footer > .container {
+			padding-right: 15px;
+			padding-left: 15px;
+		}
 
-	link(rel='stylesheet', type='text/css', href='/ThirdParty/fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5')
-	script(type='text/javascript', src='/ThirdParty/fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5')
+		code {
+			font-size: 80%;
+		}
+	script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', crossorigin='anonymous')
+	script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1', crossorigin='anonymous')
+	script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM', crossorigin='anonymous')
 
-	link(rel='stylesheet', type='text/css', href='/ThirdParty/fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7')
-	script(type='text/javascript', src='/ThirdParty/fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7')
-
-	script(type='text/javascript', src='/ThirdParty/fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.5')
-
+mixin lightbox
+	link(rel='stylesheet', type='text/css', href='https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css')
+	script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js')
 	script(type='text/javascript')
-		$(document).ready(function () { $(".fancybox").fancybox(); });
+		$(document).ready(function () {
+			$(document).on('click', '[data-toggle="lightbox"]', function(event) {
+				event.preventDefault();
+				$(this).ekkoLightbox();
+			});
+		});
 
 mixin navLink(currentPath, path, text)
-	li(class = (path == currentPath) && 'active'): a(href=path) #{text}
+	li(class = ['nav-item', (path == currentPath) ? 'active' : '']): a.nav-link(href=path) #{text}
 
 !!!
 html
 	head
 		meta(charset='utf-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
 		block meta
 		block title
 		+bootstrap
-		+jquery
-		+fancybox
+		+lightbox
 
 	body
-		.navbar.navbar-inverse.navbar-fixed-top
-			.navbar-inner
-				.container
-					a.brand(href='/') Пушкино, Высотка
-					.nav-collapse.collapse
-						ul.nav
-							block navLinks
-		.container
-			block body
-			hr
-			footer
-				p.muted Использование текста и содержимого без согласия автора запрещено.
+		nav.navbar.navbar-expand-md.navbar-dark.fixed-top.bg-dark
+			a.navbar-brand(href='/') Пушкино, Высотка
+			.navbar-collapse.collapse
+				ul.navbar-nav.mr-auto
+					block navLinks
+
+		main(role='main')
+			block beforeBody
+			.container
+				block body
+
+		footer.footer.mt-auto.py-3
+			.container
+				span.text-muted
+					:markdown
+						E-mail: [pushkino-vysotka-sale@outlook.com](mailto:pushkino-vysotka-sale@outlook.com).
+						Тел.: [+7-999-554-6066](tel:+79995546066)
 
 		include yandex-metrika.html
 		include google-analytics.html

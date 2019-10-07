@@ -4,40 +4,31 @@ append meta
 	+meta(['Фотографии', 'Фотографии дома', 'Фотографии квартиры', 'Фотографии ремонта', 'Вид из окна'])
 
 mixin bedroomThumbnail(name, comment)
-	li
-		+localPhoto('bedroom', comment || 'Спальня', 'bedroom/' + name)
+	+localPhoto('bedroom', comment || 'Спальня', 'bedroom/' + name)
 
 mixin bathroomThumbnail(name, comment)
-	li
-		+localPhoto('bathroom', comment || 'Санузел', 'bathroom/' + name)
+	+localPhoto('bathroom', comment || 'Санузел', 'bathroom/' + name)
 
 mixin kitchenThumbnail(name, comment)
-	li
-		+localPhoto('kitchen', comment || 'Зал', 'livingroom/' + name)
+	+localPhoto('kitchen', comment || 'Зал', 'livingroom/' + name)
 
 mixin hallThumbnail(name, comment)
-	li
-		+localPhoto('hall', comment, 'hallway/' + name)
+	+localPhoto('hall', comment, 'hallway/' + name)
 
 mixin balconyThumbnail(name, comment)
-	li
-		+localPhoto('balcony', comment || 'Балкон', 'balcony/' + name)
+	+localPhoto('balcony', comment || 'Балкон', 'balcony/' + name)
 
 mixin viewThumbnail(yandexSrc, comment)
-	li
-		+yandexPhotoS('view', comment || 'Вид из окна квартиры', yandexSrc)
+	+yandexPhotoS('view', comment || 'Вид из окна квартиры', yandexSrc)
 
 mixin buildingInteriorThumbnail(yandexSrc, comment)
-	li
-		+yandexPhotoS('buildingInterior', comment, yandexSrc)
+	+yandexPhotoS('buildingInterior', comment, yandexSrc)
 
 mixin buildingExteriorThumbnail(yandexSrc, comment)
-	li
-		+yandexPhotoS('buildingExterior', comment || 'Дом', yandexSrc)
+	+yandexPhotoS('buildingExterior', comment || 'Дом', yandexSrc)
 
 mixin infoThumbnail(yandexSrc, comment)
-	li
-		+yandexPhotoS('info', comment, yandexSrc)
+	+yandexPhotoS('info', comment, yandexSrc)
 
 append navLinks
 	+navLinks('/photos')
@@ -49,7 +40,7 @@ append body
 	+header('/photos')
 
 	h3 Спальня
-	ul#bedroomGallery.thumbnails
+	#bedroomGallery.row
 		+bedroomThumbnail('SAM_1078_s')
 		+bedroomThumbnail('SAM_1316_s')
 		+bedroomThumbnail('SAM_1318_s')
@@ -59,7 +50,7 @@ append body
 	hr
 
 	h3 Санузел
-	ul#bathroomGallery.thumbnails
+	#bathroomGallery.row
 		+bathroomThumbnail('SAM_1299_s')
 		+bathroomThumbnail('SAM_1300_s')
 		+bathroomThumbnail('SAM_1302_s')
@@ -68,7 +59,7 @@ append body
 	hr
 
 	h3 Зал
-	ul#kitchenGallery.thumbnails
+	#kitchenGallery.row
 		+kitchenThumbnail('SAM_1279_s')
 		+kitchenThumbnail('SAM_1284_s')
 		+kitchenThumbnail('SAM_1286_s')
@@ -79,14 +70,15 @@ append body
 	hr
 
 	h3 Холл (прихожая, коридор)
-	ul#hallGallery.thumbnails
-		+hallThumbnail('SAM_1397_s', 'Прихожая')
+	#hallGallery.row
+		.col-sm-8
+			+hallThumbnail('SAM_1397_s', 'Прихожая')
 		+hallThumbnail('SAM_1405_s', 'Коридор')
 
 	hr
 
 	h3 Лоджия
-	ul#balconyGallery.thumbnails
+	#balconyGallery.row
 		+balconyThumbnail('SAM_1393_s')
 		+balconyThumbnail('SAM_1395_s')
 		+balconyThumbnail('SAM_1396_s')
@@ -94,14 +86,14 @@ append body
 	hr
 
 	h3 Вид из окна
-	ul#viewGallery.thumbnails
+	#viewGallery.row
 		+viewThumbnail('http://img-fotki.yandex.ru/get/6445/2391467.16/0_9d6c5_8f863f99')
 		+viewThumbnail('http://img-fotki.yandex.ru/get/5632/2391467.16/0_9d6c6_b28c99d1')
 
 	hr
 
 	h3 Подъезд
-	ul#buildingInteriorGallery.thumbnails
+	#buildingInteriorGallery.row
 		+buildingInteriorThumbnail('http://img-fotki.yandex.ru/get/4117/2391467.16/0_9d90d_820afea3', 'Холл на первом этаже')
 		+buildingInteriorThumbnail('http://img-fotki.yandex.ru/get/4122/2391467.16/0_9d6b3_2e8b967f', 'Лифтовый холл')
 		+buildingInteriorThumbnail('http://img-fotki.yandex.ru/get/5639/2391467.16/0_9d6b4_2462b958', 'Холл на первом этаже')
@@ -114,7 +106,7 @@ append body
 	hr
 
 	h3 Дом
-	ul#buildingExteriorGallery.thumbnails
+	#buildingExteriorGallery.row
 		+buildingExteriorThumbnail('http://img-fotki.yandex.ru/get/6426/2391467.16/0_9d6c4_553c41e1')
 		+buildingExteriorThumbnail('http://img-fotki.yandex.ru/get/6447/2391467.16/0_9d911_af9182af', 'Вход в жилую часть со стороны двора')
 		+buildingExteriorThumbnail('http://img-fotki.yandex.ru/get/6443/2391467.16/0_9d913_9311e09a', 'Вход в жилую часть со стороны двора')
@@ -125,7 +117,7 @@ append body
 	hr
 
 	h3 Полезная информация
-	ul#infoGallery.thumbnails
+	#infoGallery.row
 		+infoThumbnail('http://img-fotki.yandex.ru/get/4137/2391467.16/0_9d59f_e0215f3b', 'Планировка БТИ')
 		+infoThumbnail('http://img-fotki.yandex.ru/get/4130/2391467.16/0_9d5a0_c3608e18', 'Экспликация БТИ')
 		+infoThumbnail('http://img-fotki.yandex.ru/get/5624/2391467.16/0_9d5a1_b6533ea0', 'Планировка от застройщика (площади указаны неверно')
