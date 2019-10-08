@@ -9,6 +9,9 @@ append navLinks
 append title
 	+title('/flat')
 
+mixin planThumbnail(name, comment)
+	+localPhoto('plan', comment, 'plan/' + name)
+
 append body
 	+header('/flat')
 
@@ -39,11 +42,12 @@ append body
 			вероятнее всего, покупка этой квартиры для вас действительно нецелесообразна.
 
 	.row
-		+yandexPhotoS('planGallery', 'Планировка БТИ', 'https://img-fotki.yandex.ru/get/4137/2391467.16/0_9d59f_e0215f3b')
-		+yandexPhotoS('planGallery', 'Экспликация БТИ', 'https://img-fotki.yandex.ru/get/4130/2391467.16/0_9d5a0_c3608e18')
-		+yandexPhotoS('planGallery', 'Планировка от застройщика (площади указаны неверно', 'https://img-fotki.yandex.ru/get/5624/2391467.16/0_9d5a1_b6533ea0')
-		+yandexPhotoS('planGallery', 'План типового этажа от застройщика', 'https://img-fotki.yandex.ru/get/4120/2391467.16/0_9d5a2_6a2ac266')
-		+yandexPhotoS('planGallery', 'Вид из окна', 'https://img-fotki.yandex.ru/get/5632/2391467.16/0_9d6c6_b28c99d1')
+		+planThumbnail('plan', 'Примерный эскиз фактической планировки')
+		+planThumbnail('plan-3d', 'Примерный эскиз фактической планировки')
+		+planThumbnail('plan-bti', 'Планировка БТИ')
+		+planThumbnail('explication-bti', 'Экспликация БТИ')
+		+planThumbnail('plan-zastr-etazh', 'План типового этажа от застройщика, некоторые площади указаны неверно')
+		+planThumbnail('../view/59736101_2372362106316207_3383261176004409278_n', 'Вид из окна')
 
 	h2 Ремонт
 	p
@@ -70,8 +74,8 @@ append body
 			Таким образом, квартира полностью пригодна для проживания.
 
 	.row
-		+yandexPhotoS('techGallery', 'Санузел', 'https://img-fotki.yandex.ru/get/6424/2391467.16/0_9d6bc_57fa041')
-		+yandexPhotoS('techGallery', 'Кухня', 'https://img-fotki.yandex.ru/get/5637/2391467.16/0_9d6cd_79d7d540')
-		+yandexPhotoS('techGallery', 'Кухня', 'https://img-fotki.yandex.ru/get/5645/2391467.16/0_9d6d9_c168de07')
-		+yandexPhotoS('techGallery', 'Спальня', 'https://img-fotki.yandex.ru/get/5638/2391467.16/0_9d6c1_b52558bd')
-		+yandexPhotoS('techGallery', 'Спальня', 'https://img-fotki.yandex.ru/get/5638/2391467.16/0_9d6c3_d9cbb7b2')
+		+localPhoto('techGallery', 'Кухня', 'livingroom/SAM_1279_s')
+		+localPhoto('techGallery', 'Кухня', 'livingroom/SAM_1286_s')
+		+localPhoto('techGallery', 'Спальня', 'bedroom/SAM_1078_s')
+		+localPhoto('techGallery', 'Санузел', 'bathroom/SAM_1302_s')
+		+localPhoto('techGallery', 'Санузел', 'bathroom/SAM_1300_s')

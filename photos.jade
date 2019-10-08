@@ -18,17 +18,17 @@ mixin hallThumbnail(name, comment)
 mixin balconyThumbnail(name, comment)
 	+localPhoto('balcony', comment || 'Балкон', 'balcony/' + name)
 
-mixin viewThumbnail(yandexSrc, comment)
-	+yandexPhotoS('view', comment || 'Вид из окна квартиры', yandexSrc)
+mixin viewThumbnail(name, comment)
+	+localPhoto('view', comment || 'Вид из окна квартиры', 'view/' + name)
 
-mixin buildingInteriorThumbnail(yandexSrc, comment)
-	+yandexPhotoS('buildingInterior', comment, yandexSrc)
+mixin buildingInteriorThumbnail(name, comment)
+	+localPhoto('buildingInterior', comment, 'interior/' + name)
 
-mixin buildingExteriorThumbnail(yandexSrc, comment)
-	+yandexPhotoS('buildingExterior', comment || 'Дом', yandexSrc)
+mixin buildingExteriorThumbnail(name, comment)
+	+localPhoto('buildingExterior', comment || 'Дом', 'exterior/' + name)
 
-mixin infoThumbnail(yandexSrc, comment)
-	+yandexPhotoS('info', comment, yandexSrc)
+mixin planThumbnail(name, comment)
+	+localPhoto('plan', comment, 'plan/' + name)
 
 append navLinks
 	+navLinks('/photos')
@@ -87,38 +87,36 @@ append body
 
 	h3 Вид из окна
 	#viewGallery.row
-		+viewThumbnail('https://img-fotki.yandex.ru/get/6445/2391467.16/0_9d6c5_8f863f99')
-		+viewThumbnail('https://img-fotki.yandex.ru/get/5632/2391467.16/0_9d6c6_b28c99d1')
+		+viewThumbnail('30841577_639578556379824_4812889881736904704_n')
+		+viewThumbnail('33993409_173069516703282_5956283993535021056_n')
+		+viewThumbnail('36852288_1838750016181335_8923785565308977152_n')
+		+viewThumbnail('43678617_292301274946884_1845370482043018633_n')
+		+viewThumbnail('59736101_2372362106316207_3383261176004409278_n')
+		+viewThumbnail('70660065_2424057874315715_3985480614271672949_n')
 
 	hr
 
 	h3 Подъезд
 	#buildingInteriorGallery.row
-		+buildingInteriorThumbnail('https://img-fotki.yandex.ru/get/4117/2391467.16/0_9d90d_820afea3', 'Холл на первом этаже')
-		+buildingInteriorThumbnail('https://img-fotki.yandex.ru/get/4122/2391467.16/0_9d6b3_2e8b967f', 'Лифтовый холл')
-		+buildingInteriorThumbnail('https://img-fotki.yandex.ru/get/5639/2391467.16/0_9d6b4_2462b958', 'Холл на первом этаже')
-		+buildingInteriorThumbnail('https://img-fotki.yandex.ru/get/6426/2391467.16/0_9d6b5_684ae49f', 'Холл на первом этаже')
-		+buildingInteriorThumbnail('https://img-fotki.yandex.ru/get/6447/2391467.16/0_9d6b9_14d2dfa1', 'Коридор девятого этажа')
-		+buildingInteriorThumbnail('https://img-fotki.yandex.ru/get/4133/2391467.16/0_9d6b6_8b40fa64', 'Коридор девятого этажа')
-		+buildingInteriorThumbnail('https://img-fotki.yandex.ru/get/4134/2391467.16/0_9d6b7_ba499caf', 'Холл девятого этажа')
-		+buildingInteriorThumbnail('https://img-fotki.yandex.ru/get/6428/2391467.16/0_9d6b8_4474a3cd', 'Холл девятого этажа')
+		+buildingInteriorThumbnail('WP_20191007_08_55_42_s', 'Холл на первом этаже')
+		+buildingInteriorThumbnail('WP_20191007_08_53_16_s', 'Коридор девятого этажа')
+		+buildingInteriorThumbnail('WP_20191007_08_53_47_s', 'Холл девятого этажа')
 
 	hr
 
 	h3 Дом
 	#buildingExteriorGallery.row
-		+buildingExteriorThumbnail('https://img-fotki.yandex.ru/get/6426/2391467.16/0_9d6c4_553c41e1')
-		+buildingExteriorThumbnail('https://img-fotki.yandex.ru/get/6447/2391467.16/0_9d911_af9182af', 'Вход в жилую часть со стороны двора')
-		+buildingExteriorThumbnail('https://img-fotki.yandex.ru/get/6443/2391467.16/0_9d913_9311e09a', 'Вход в жилую часть со стороны двора')
-		+buildingExteriorThumbnail('https://img-fotki.yandex.ru/get/4127/2391467.16/0_9d90f_d436f90e', 'Стоянка для жителей ЖК "Высотка"')
-		+buildingExteriorThumbnail('https://img-fotki.yandex.ru/get/4138/2391467.16/0_9d910_cef7374a', 'Стоянка для жителей ЖК "Высотка"')
-		+buildingExteriorThumbnail('https://img-fotki.yandex.ru/get/6437/2391467.16/0_9d912_b72a07d1', 'Детская площадка во дворе')
+		+buildingExteriorThumbnail('DVC00484_s')
+		+buildingExteriorThumbnail('WP_20191003_16_17_49_s')
+		+buildingExteriorThumbnail('WP_20191003_16_19_18_s')
+		+buildingExteriorThumbnail('WP_20191003_16_19_44_s')
+		+buildingExteriorThumbnail('WP_20191007_08_56_36_s', 'Вход в жилую часть со стороны двора')
+		+buildingExteriorThumbnail('WP_20191007_08_57_36_s', 'Стоянка для жителей ЖК "Высотка"')
 
 	hr
 
 	h3 Полезная информация
 	#infoGallery.row
-		+infoThumbnail('https://img-fotki.yandex.ru/get/4137/2391467.16/0_9d59f_e0215f3b', 'Планировка БТИ')
-		+infoThumbnail('https://img-fotki.yandex.ru/get/4130/2391467.16/0_9d5a0_c3608e18', 'Экспликация БТИ')
-		+infoThumbnail('https://img-fotki.yandex.ru/get/5624/2391467.16/0_9d5a1_b6533ea0', 'Планировка от застройщика (площади указаны неверно')
-		+infoThumbnail('https://img-fotki.yandex.ru/get/4120/2391467.16/0_9d5a2_6a2ac266', 'План типового этажа от застройщика')
+		+planThumbnail('plan', 'Примерный эскиз фактической планировки')
+		+planThumbnail('plan-3d', 'Примерный эскиз фактической планировки')
+		+planThumbnail('plan-bti', 'Планировка БТИ')
